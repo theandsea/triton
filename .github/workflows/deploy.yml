@@ -13,7 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: save key
+        run: |
+          echo ${{ secrets.SSH_PRIVATE_KEY }} > github.pub
 
       - name: Deploy to Droplet
         run: |
-          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.SSH_USER }}@${{ secrets.DROPLET_IP }} 'cd /var/www/html/test/triton && git pull origin main'
+          ssh -i "github" ${{ secrets.SSH_USER }}@${{ secrets.DROPLET_IP }} 'cd /var/www/html/test/triton && git pull origin main'
