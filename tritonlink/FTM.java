@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.sql.Driver;
 // import com.mysql.jdbc.Driver;
 
-public class FTM {
+public class FTM_test {
     public static void main(String[] args) {
         //try{
             //Class.forName("com.mysql.cj.jdbc.Driver"); // this is in mysql
