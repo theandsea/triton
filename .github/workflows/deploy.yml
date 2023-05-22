@@ -15,4 +15,4 @@ jobs:
 
       - name: Deploy to Droplet
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.SSH_USER }}@${{ secrets.DROPLET_IP }} 'cd /var/www/html/test/triton && git pull origin main'
+          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.SSH_USER }}@${{ secrets.DROPLET_IP }} 'cd /var/www/html/test/triton && git pull origin main'
